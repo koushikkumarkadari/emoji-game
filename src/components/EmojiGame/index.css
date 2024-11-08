@@ -7,10 +7,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .un-ordered-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+}
+@media(min-width:1480px){
+  .inner-background-container {
+    height:100vh;
+  }
 }

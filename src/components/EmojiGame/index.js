@@ -17,9 +17,9 @@ import EmojiCard from '../EmojiCard'
 import WinOrLoseCard from '../WinOrLoseCard'
 
 let score = 0
-let highScore=0
+let highScore = 0
 class EmojiGame extends Component {
-  state = { isGameOver: false, continEmojisList: []}
+  state = {isGameOver: false, continEmojisList: []}
 
   onShuffling = each => {
     const {continEmojisList} = this.state
@@ -37,9 +37,8 @@ class EmojiGame extends Component {
   }
 
   onRestart = () => {
-    
     if (highScore < score) {
-      highScore=score
+      highScore = score
     }
     this.setState(prevState => ({
       isGameOver: !prevState.isGameOver,
@@ -52,25 +51,29 @@ class EmojiGame extends Component {
     const {emojisList} = this.props
     emojisList.sort(() => Math.random() - 0.5)
 
-    const { isGameOver} = this.state
+    const {isGameOver} = this.state
     return (
-      <>
+      <div className="background-container">
         <NavBar isGameOver={isGameOver} score={score} highScore={highScore} />
+
         {!isGameOver && (
-          <div>
-            {emojisList.map(each => (
-              <EmojiCard
-                key={each.id}
-                shuffling={this.onShuffling}
-                each={each}
-              />
-            ))}
+          <div className="inner-background-container">
+            <ul className="un-ordered-list">
+              {emojisList.map(each => (
+                <EmojiCard
+                  key={each.id}
+                  shuffling={this.onShuffling}
+                  each={each}
+                />
+              ))}
+            </ul>
           </div>
         )}
+
         {isGameOver && (
           <WinOrLoseCard onRestart={this.onRestart} score={score} />
         )}
-      </>
+      </div>
     )
   }
 }

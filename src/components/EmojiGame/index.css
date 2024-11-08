@@ -1,1 +1,16 @@
-/* Write your code here. */
+.background-container {
+  background-image: linear-gradient(to bottom, #6a59ff, #fbc7d4);
+  font-family: roboto;
+}
+.inner-background-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.un-ordered-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}

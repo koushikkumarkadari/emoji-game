@@ -1,1 +1,8 @@
-/* Write your code here. */
+.emoji-card-buttton {
+  background-color: #ffffff33;
+  border-radius: 20px;
+  margin: 20px;
+  height: 200px;
+  width: 200px;
+  border: 1px solid #ffffff30;
+}
